@@ -71,3 +71,15 @@ input::-webkit-outer-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+.percentage:hover {
+    background-color: #9FE8DF;
+    color: #00474B;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.percentage.active {
+    background-color: #26C2AE;
+    color: #00474B;
+}

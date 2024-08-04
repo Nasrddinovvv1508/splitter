@@ -35,7 +35,7 @@
     <main class="splitter-container">
         <div class="mx-auto max-w-[920px] flex flex-col items-center py-[55px]">
             <div class="splitter-header">
-                <img src="./static/images/SPLITTER.svg" alt="SPLITTER">
+                <img class="select-none" src="./static/images/SPLITTER.svg" alt="SPLITTER">
             </div>
 
             <div class="splitter-main grid grid-cols-2 gap-[48px]">
@@ -57,40 +57,30 @@
 
                     <h1 class="text-[16px] font-bold text-[#5E7A7D] mb-[16px]">Select Tip %</h1>
                     <div class="w-full grid grid-cols-3 gap-[14px] mb-[40px]">
-                        <div
-                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
-                            <span>
-                                5%
-                            </span>
-                        </div>
+                        <button data-value="5"
+                            class="percentage bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            5%
+                        </button>
 
-                        <div
-                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
-                            <span>
-                                10%
-                            </span>
-                        </div>
+                        <button data-value="10"
+                            class="percentage bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            10%
+                        </button>
 
-                        <div
-                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
-                            <span>
-                                15%
-                            </span>
-                        </div>
+                        <button data-value="15"
+                            class="percentage bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            15%
+                        </button>
 
-                        <div
-                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
-                            <span>
-                                25%
-                            </span>
-                        </div>
+                        <button data-value="25"
+                            class="percentage bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            25%
+                        </button>
 
-                        <div
-                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
-                            <span>
-                                50%
-                            </span>
-                        </div>
+                        <button data-value="50"
+                            class="percentage bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white ">
+                            50%
+                        </button>
 
                         <div
                             class="px-1 enter-amount bg-[#F3F9FA] py-[5px] justify-center text-[24px] flex flex-col items-center rounded-md font-bold text-white">
@@ -102,8 +92,9 @@
 
                     <div>
                         <div class="flex justify-between mb-[6px]">
-                            <label>Number of People</label>
-                            <p class="font-bold text-[#E17457] ">
+                            <label class="font-bold text-[#5E7A7D]">Number of People</label>
+
+                            <p id="error" class="font-bold text-[#E17457] ">
 
                             </p>
                         </div>
@@ -130,7 +121,7 @@
                                 <span class="text-[13px] text-[#7F9D9F]">/ person</span>
                             </div>
 
-                            <h1 class="text-[48px] font-bold text-[#26C2AE]">$0.00</h1>
+                            <h1 id="tipAmount" class="text-[48px] font-bold text-[#26C2AE]">$0.00</h1>
                         </div>
 
                         <div class="flex justify-between items-center">
@@ -139,12 +130,12 @@
                                 <span class="text-[13px] text-[#7F9D9F]">/ person</span>
                             </div>
 
-                            <h1 class="text-[48px] font-bold text-[#26C2AE]">$0.00</h1>
+                            <h1 id="total" class="text-[48px] font-bold text-[#26C2AE]">$0.00</h1>
                         </div>
                     </div>
 
                     <button id="reset"
-                        class="btn btn-primary uppercase text-[20px] bg-[#26C2AE] hover:bg-[#9FE8DF] btn-disabled text-white font-bold text-[#00474B]">
+                        class="btn btn-primary uppercase text-[20px] bg-[#26C2AE] btn-disabled hover:bg-[#9FE8DF] border-none text-white font-bold text-[#00474B]">
                         <span class="text-white">
                             reset
                         </span>
