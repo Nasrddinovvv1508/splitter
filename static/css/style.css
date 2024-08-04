@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css2?family=Space+Mono:wght@100;200;300;400;500;600;700&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: #c5e4e7;
+}
+
+.title {
+    color: #3D6666;
+}
+
+.splitter-header {
+    margin-bottom: 87px;
+}
+
+.splitter-main {
+    width: 920px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 32px 32px 32px 48px;
+    display: flex;
+    box-shadow: 0px 32px 43px 0px #4FA6AF33;
+    border-radius: 28px;
+}
+
+.splitter-calc {}
+
+.splitter-reset {
+    background-color: #00474b;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.enter-amount {
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    border-radius: 5px;
+}
+
+#amount:focus,
+#numberOfPeople:focus {
+    outline: none;
+}
+
+.enter-amount:focus-within {
+    border-color: #26c2ae;
+    cursor: pointer;
+}
+
+.no-value {
+    border-color: #E17052;
+    cursor: pointer;
+}
+
+/* Input elementidagi spinnerlarni yashirish */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox uchun spinnerlarni yashirish */
+input[type=number] {
+    -moz-appearance: textfield;
+}

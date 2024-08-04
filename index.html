@@ -4,12 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="./static/images/calculator-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Splitter</title>
 </head>
 
-<body>
-    <h1 class="title">Splitter</h1>
+<body class="bg-[#c5e4e7]">
+
+    <main class="splitter-container">
+        <div class="mx-auto max-w-[920px] flex flex-col items-center py-[55px]">
+            <div class="splitter-header">
+                <img src="./static/images/SPLITTER.svg" alt="SPLITTER">
+            </div>
+
+            <div class="splitter-main grid grid-cols-2 gap-[48px]">
+                <div class="splitter-calc">
+                    <div class="mb-[40px]">
+                        <label for="amount" class="mb-[8px]">
+                            <h1 class="text-[16px] font-bold text-[#5E7A7D]">Bill</h1>
+                        </label>
+                        <div
+                            class="bg-[#F3F9FA] enter-amount h-[48px] flex items-center justify-between pr-[17px] pl-[19px]">
+                            <label for="amount">
+                                <img src="./static/images/dollar.svg" alt="dollar">
+                            </label>
+                            <input placeholder="0" id="amount"
+                                class="text-right bg-transparent h-full w-full text-[24px] font-bold text-[#00474B] :placeholder:text-[#9ebbbd]"
+                                type="number">
+                        </div>
+                    </div>
+
+                    <h1 class="text-[16px] font-bold text-[#5E7A7D] mb-[16px]">Select Tip %</h1>
+                    <div class="w-full grid grid-cols-3 gap-[14px] mb-[40px]">
+                        <div
+                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            <span>
+                                5%
+                            </span>
+                        </div>
+
+                        <div
+                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            <span>
+                                10%
+                            </span>
+                        </div>
+
+                        <div
+                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            <span>
+                                15%
+                            </span>
+                        </div>
+
+                        <div
+                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            <span>
+                                25%
+                            </span>
+                        </div>
+
+                        <div
+                            class="bg-[#00474B] py-[6px] text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            <span>
+                                50%
+                            </span>
+                        </div>
+
+                        <div
+                            class="px-1 enter-amount bg-[#F3F9FA] py-[5px] justify-center text-[24px] flex flex-col items-center rounded-md font-bold text-white">
+                            <input id="custom"
+                                class="w-full h-full text-[#00474B] focus:outline-none text-[24px] font-bold bg-transparent text-right placeholder:text-center"
+                                type="number" placeholder="Custom">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-[6px]">
+                            <label>Number of People</label>
+                            <p class="font-bold text-[#E17457] ">
+
+                            </p>
+                        </div>
+
+                        <div>
+                            <div
+                                class="bg-[#F3F9FA] enter-amount h-[48px] flex items-center justify-between pr-[17px] pl-[19px]">
+                                <label for="numberOfPeople">
+                                    <img src="./static/images/dollar.svg" alt="dollar">
+                                </label>
+                                <input placeholder="0" id="numberOfPeople"
+                                    class="text-right bg-transparent h-full w-full text-[24px] font-bold text-[#00474B] :placeholder:text-[#9ebbbd]"
+                                    type="number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="splitter-reset p-[40px]">
+                    <div>
+                        <div class="flex justify-between items-center mb-[25px]">
+                            <div>
+                                <p class="font-bold text-white">Tip Amount</p>
+                                <span class="text-[13px] text-[#7F9D9F]">/ person</span>
+                            </div>
+
+                            <h1 class="text-[48px] font-bold text-[#26C2AE]">$0.00</h1>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-bold text-white">Total</p>
+                                <span class="text-[13px] text-[#7F9D9F]">/ person</span>
+                            </div>
+
+                            <h1 class="text-[48px] font-bold text-[#26C2AE]">$0.00</h1>
+                        </div>
+                    </div>
+
+                    <button id="reset"
+                        class="btn btn-primary uppercase text-[20px] bg-[#26C2AE] hover:bg-[#9FE8DF] btn-disabled text-white font-bold text-[#00474B]">
+                        <span class="text-white">
+                            reset
+                        </span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script type="module" src="./public/app.js"></script>
 </body>
